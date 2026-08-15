@@ -1,1 +1,1 @@
-# chaininfo.xyz
+# Infochain.xyz
