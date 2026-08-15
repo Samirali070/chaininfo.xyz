@@ -1,0 +1,4 @@
+The hero video uploaded by the site owner is:
+12057793_3840_2160_24fps-2.mov
+
+Use this exact path in the homepage hero video source.
