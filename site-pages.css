@@ -1,0 +1,31 @@
+/* Shared layout for every InfoChain inner page. Keeps About, Services, Packages, FAQ and Contact visually connected to the landing page. */
+:root{--mint:#8df5cf;--ink:#07100f;--muted:#aeb8b5;--line:rgba(255,255,255,.14)}
+body{background:#07100f;color:#f7f7f2}
+.site-header.simple-header{min-height:auto!important;background:linear-gradient(90deg,rgba(4,12,11,.9),rgba(4,12,11,.45) 55%,rgba(4,12,11,.72)),linear-gradient(180deg,rgba(4,10,9,.15),rgba(4,10,9,.78)),url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2400&q=88') center/cover no-repeat!important}
+.simple-header .hero{min-height:clamp(470px,62vh,700px)!important;padding:95px 0 90px!important;align-items:flex-end!important}
+.simple-header .hero-text{max-width:920px!important;padding-top:0!important}
+.simple-header .hero h1{max-width:920px!important;font-size:clamp(3.2rem,6.8vw,7rem)!important}
+.simple-header .hero-subtitle{max-width:720px!important}
+.page-content{max-width:1240px;margin:0 auto}
+.page-lead{display:grid;grid-template-columns:1fr .72fr;gap:80px;align-items:end;margin-bottom:52px}
+.page-lead h2{font-size:clamp(2.7rem,5.4vw,5.8rem);line-height:.88;letter-spacing:-.08em;margin:0;text-transform:uppercase}
+.page-lead>p{color:var(--muted);max-width:520px;margin:0}
+.split-section{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.grid{display:grid;gap:16px}.grid.three{grid-template-columns:repeat(3,1fr)}
+.info-card{padding:28px;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;min-height:190px}
+.info-card:hover{border-color:rgba(141,245,207,.35);transform:translateY(-2px);transition:.2s ease}
+.info-card h3{font-size:1.35rem;line-height:1.05;letter-spacing:-.04em;margin:0 0 13px}
+.info-card p{color:var(--muted);margin:0;line-height:1.65;font-size:.9rem}
+.card-index{color:var(--mint);font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:800;letter-spacing:.12em;margin-bottom:22px}
+.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.faq-list .info-card{min-height:230px}
+.faq-list .info-card h3{font-size:1.55rem}
+.clean-list{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--line)}
+.clean-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);color:#c6cecb;font-size:.9rem}
+.clean-list li:before{content:'+';color:var(--mint);font-weight:900;margin-right:10px}
+.content-section{border-top:1px solid var(--line)}
+.content-section h2{font-size:clamp(2.6rem,5vw,5rem);line-height:.9;letter-spacing:-.08em;margin:0 0 18px;text-transform:uppercase}
+.content-section>p{color:var(--muted);max-width:760px}
+.page-cta{margin-top:35px;padding-top:55px;border-top:1px solid var(--line)}
+.page-cta h2{max-width:900px}
+@media(max-width:850px){.simple-header .hero{min-height:520px!important;padding:70px 0 65px!important}.page-lead,.split-section{grid-template-columns:1fr;gap:28px}.grid.three,.faq-list{grid-template-columns:1fr}.info-card,.faq-list .info-card{min-height:0}.simple-header .hero h1{font-size:clamp(2.8rem,12vw,5rem)!important}}
