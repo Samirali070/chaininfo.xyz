@@ -1,30 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-/* Stable high-resolution skyline. This deliberately bypasses the broken local JPEG. */
+/* InfoChain hero: one local image source, one overlay, no fallbacks. */
 .site-header{
-  background:
-    linear-gradient(90deg,rgba(4,12,11,.88) 0%,rgba(4,12,11,.62) 34%,rgba(4,12,11,.28) 72%,rgba(4,12,11,.44) 100%),
-    linear-gradient(180deg,rgba(4,10,9,.08),rgba(4,10,9,.18) 52%,rgba(4,10,9,.84)),
-    url('https://images.unsplash.com/photo-1547328299-5f195cfe9d43?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=88&w=3000') 35% center/cover no-repeat!important;
   position:relative;
   overflow:hidden;
   isolation:isolate;
+  background:#07100f!important;
 }
-.site-header:before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 72% 34%,rgba(141,245,207,.08),transparent 30%);pointer-events:none}
-.site-header:after{z-index:1!important;background:linear-gradient(90deg,rgba(4,12,11,.13),transparent 60%),linear-gradient(180deg,transparent 0%,rgba(4,10,9,.68) 100%)!important}
-.nav,.hero{z-index:2}
+
+.site-header::before{
+  content:"";
+  position:absolute;
+  inset:-2.5%;
+  z-index:0;
+  pointer-events:none;
+  background:url('assets/infochain-hero-final.webp') 68% center/cover no-repeat;
+  transform:scale(1.025);
+  transform-origin:center;
+  animation:skyline-drift 12s ease-in-out infinite alternate;
+}
+
+.site-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1!important;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(4,12,11,.88) 0%,rgba(4,12,11,.60) 35%,rgba(4,12,11,.24) 72%,rgba(4,12,11,.38) 100%),
+    linear-gradient(180deg,rgba(4,10,9,.08) 0%,rgba(4,10,9,.10) 48%,rgba(4,10,9,.82) 100%),
+    radial-gradient(circle at 72% 34%,rgba(141,245,207,.07),transparent 30%);
+}
+
+@keyframes skyline-drift{
+  from{transform:scale(1.025) translate3d(-.25%,0,0)}
+  to{transform:scale(1.075) translate3d(.7%,-.3%,0)}
+}
+
+.nav,.hero{position:relative;z-index:2}
 .logo,.nav-links a,.hero h1,.hero-subtitle,.hero .eyebrow,.hero-trust,.btn{font-family:'IBM Plex Mono',monospace!important}
 .logo{letter-spacing:.22em!important;text-transform:uppercase!important}
 .hero-video,.hero-video-overlay{display:none!important}
 .hero-text,.hero-trust{position:relative!important;z-index:2!important}
 .hero-text{max-width:900px}
 .hero h1{position:relative;z-index:2;text-shadow:0 0 5px rgba(141,245,207,.12),0 0 18px rgba(141,245,207,.05)!important}
+
 @media(max-width:850px){
-  .site-header{
-    background:
-      linear-gradient(90deg,rgba(4,12,11,.82),rgba(4,12,11,.38)),
-      linear-gradient(180deg,rgba(4,10,9,.12),rgba(4,10,9,.82)),
-      url('https://images.unsplash.com/photo-1547328299-5f195cfe9d43?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=88&w=1800') 45% center/cover no-repeat!important;
-  }
+  .site-header::before{background-position:72% center;inset:-4%}
   .hero h1{font-size:clamp(2.6rem,11vw,5rem)!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .site-header::before{animation:none;transform:scale(1.025)}
 }
