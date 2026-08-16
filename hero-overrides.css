@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-/* InfoChain hero: one local image source, one overlay, no fallbacks. */
+/* InfoChain hero — one local asset, one overlay, no legacy fallbacks. */
 .site-header{
   position:relative;
   overflow:hidden;
@@ -14,7 +14,7 @@
   inset:-2.5%;
   z-index:0;
   pointer-events:none;
-  background:url('assets/infochain-hero-final.webp') 68% center/cover no-repeat;
+  background:url('assets/infochain-hero-final.avif') 68% center/cover no-repeat;
   transform:scale(1.025);
   transform-origin:center;
   animation:skyline-drift 12s ease-in-out infinite alternate;
@@ -27,14 +27,13 @@
   z-index:1!important;
   pointer-events:none;
   background:
-    linear-gradient(90deg,rgba(4,12,11,.88) 0%,rgba(4,12,11,.60) 35%,rgba(4,12,11,.24) 72%,rgba(4,12,11,.38) 100%),
-    linear-gradient(180deg,rgba(4,10,9,.08) 0%,rgba(4,10,9,.10) 48%,rgba(4,10,9,.82) 100%),
-    radial-gradient(circle at 72% 34%,rgba(141,245,207,.07),transparent 30%);
+    linear-gradient(90deg,rgba(4,12,11,.82) 0%,rgba(4,12,11,.52) 34%,rgba(4,12,11,.18) 72%,rgba(4,12,11,.30) 100%),
+    linear-gradient(180deg,rgba(4,10,9,.05) 0%,rgba(4,10,9,.08) 48%,rgba(4,10,9,.72) 100%);
 }
 
 @keyframes skyline-drift{
   from{transform:scale(1.025) translate3d(-.25%,0,0)}
-  to{transform:scale(1.075) translate3d(.7%,-.3%,0)}
+  to{transform:scale(1.07) translate3d(.65%,-.25%,0)}
 }
 
 .nav,.hero{position:relative;z-index:2}
