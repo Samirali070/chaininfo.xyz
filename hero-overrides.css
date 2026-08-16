@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-/* InfoChain hero — one local asset, one overlay, no legacy fallbacks. */
+/* InfoChain hero — local high-resolution WebP, restrained overlay and very subtle motion. */
 .site-header{
   position:relative;
   overflow:hidden;
@@ -11,13 +11,14 @@
 .site-header::before{
   content:"";
   position:absolute;
-  inset:-2.5%;
+  inset:-1.5%;
   z-index:0;
   pointer-events:none;
-  background:url('assets/infochain-hero-final.avif?v=20260816-2') 68% center/cover no-repeat;
-  transform:scale(1.025);
+  background:url('assets/infochain-hero.webp?v=20260816-3') 70% center/cover no-repeat;
+  transform:scale(1.01);
   transform-origin:center;
-  animation:skyline-drift 12s ease-in-out infinite alternate;
+  animation:skyline-drift 18s ease-in-out infinite alternate;
+  will-change:transform;
 }
 
 .site-header::after{
@@ -27,13 +28,13 @@
   z-index:1!important;
   pointer-events:none;
   background:
-    linear-gradient(90deg,rgba(4,12,11,.82) 0%,rgba(4,12,11,.52) 34%,rgba(4,12,11,.18) 72%,rgba(4,12,11,.30) 100%),
-    linear-gradient(180deg,rgba(4,10,9,.05) 0%,rgba(4,10,9,.08) 48%,rgba(4,10,9,.72) 100%);
+    linear-gradient(90deg,rgba(4,12,11,.84) 0%,rgba(4,12,11,.56) 34%,rgba(4,12,11,.18) 72%,rgba(4,12,11,.28) 100%),
+    linear-gradient(180deg,rgba(4,10,9,.04) 0%,rgba(4,10,9,.08) 48%,rgba(4,10,9,.72) 100%);
 }
 
 @keyframes skyline-drift{
-  from{transform:scale(1.025) translate3d(-.25%,0,0)}
-  to{transform:scale(1.07) translate3d(.65%,-.25%,0)}
+  from{transform:scale(1.01) translate3d(-.1%,0,0)}
+  to{transform:scale(1.025) translate3d(.25%,-.1%,0)}
 }
 
 .nav,.hero{position:relative;z-index:2}
@@ -45,10 +46,10 @@
 .hero h1{position:relative;z-index:2;text-shadow:0 0 5px rgba(141,245,207,.12),0 0 18px rgba(141,245,207,.05)!important}
 
 @media(max-width:850px){
-  .site-header::before{background-position:72% center;inset:-4%}
+  .site-header::before{background-position:74% center;inset:-2.5%}
   .hero h1{font-size:clamp(2.6rem,11vw,5rem)!important}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .site-header::before{animation:none;transform:scale(1.025)}
+  .site-header::before{animation:none;transform:scale(1.01)}
 }
