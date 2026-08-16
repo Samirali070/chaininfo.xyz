@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-/* InfoChain hero — full-screen skyline, restrained overlay and subtle motion. */
+/* InfoChain hero — full-screen looping skyline video */
 .site-header:not(.simple-header){
   position:relative;
   overflow:hidden;
@@ -8,48 +8,53 @@
   background:#07100f!important;
 }
 
-.site-header:not(.simple-header)::before{
-  content:"";
+/* Video background */
+.hero-video{
   position:absolute;
-  inset:-1.5%;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
   z-index:0;
   pointer-events:none;
-  background:url('assets/HlrSd.webp?v=20260816-2') 68% center/cover no-repeat;
-  transform:scale(1.01);
-  transform-origin:center;
-  animation:skyline-drift 18s ease-in-out infinite alternate;
-  will-change:transform;
+}
+
+/* Dark overlay for text readability */
+.hero-video-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(4,12,11,.82) 0%,rgba(4,12,11,.55) 35%,rgba(4,12,11,.25) 70%,rgba(4,12,11,.35) 100%),
+    linear-gradient(180deg,rgba(4,10,9,.15) 0%,rgba(4,10,9,.25) 45%,rgba(4,10,9,.75) 100%);
+}
+
+/* Hide the old static image approach */
+.site-header:not(.simple-header)::before{
+  display:none!important;
 }
 
 .site-header:not(.simple-header)::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1!important;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg,rgba(4,12,11,.86) 0%,rgba(4,12,11,.58) 32%,rgba(4,12,11,.22) 68%,rgba(4,12,11,.32) 100%),
-    linear-gradient(180deg,rgba(4,10,9,.08) 0%,rgba(4,10,9,.12) 42%,rgba(4,10,9,.78) 100%);
-}
-
-@keyframes skyline-drift{
-  from{transform:scale(1.01) translate3d(-.1%,0,0)}
-  to{transform:scale(1.025) translate3d(.25%,-.1%,0)}
+  display:none!important;
 }
 
 .nav,.hero{position:relative;z-index:2}
 .logo,.nav-links a,.hero h1,.hero-subtitle,.hero .eyebrow,.hero-trust,.btn{font-family:'IBM Plex Mono',monospace!important}
 .logo{letter-spacing:.22em!important;text-transform:uppercase!important}
-.hero-video,.hero-video-overlay{display:none!important}
 .hero-text,.hero-trust{position:relative!important;z-index:2!important}
 .hero-text{max-width:900px}
 .hero h1{position:relative;z-index:2;text-shadow:0 0 5px rgba(141,245,207,.12),0 0 18px rgba(141,245,207,.05)!important}
 
 @media(max-width:850px){
-  .site-header:not(.simple-header)::before{background-position:72% center;inset:-2.5%}
+  .hero-video{object-position:60% center}
   .hero h1{font-size:clamp(2.6rem,11vw,5rem)!important}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .site-header:not(.simple-header)::before{animation:none;transform:scale(1.01)}
+  .hero-video{display:none}
+  .site-header:not(.simple-header){
+    background:#07100f url('assets/chicago-poster.jpg') center/cover no-repeat!important;
+  }
 }
