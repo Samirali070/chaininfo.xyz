@@ -1,3 +1,0 @@
-assets/12057793_3840_2160_24fps-2.mov
-
-Hero video path reference for InfoChain. The uploaded cinematic skyline video is stored in the assets folder.
