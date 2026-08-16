@@ -14,7 +14,7 @@
   inset:-2.5%;
   z-index:0;
   pointer-events:none;
-  background:url('assets/infochain-hero-final.avif') 68% center/cover no-repeat;
+  background:url('assets/infochain-hero-final.avif?v=20260816') 68% center/cover no-repeat;
   transform:scale(1.025);
   transform-origin:center;
   animation:skyline-drift 12s ease-in-out infinite alternate;
