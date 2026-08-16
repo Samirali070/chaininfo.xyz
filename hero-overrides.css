@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-/* InfoChain hero — local high-resolution WebP, restrained overlay and very subtle motion. */
+/* InfoChain hero — local optimized AVIF, restrained overlay and very subtle motion. */
 .site-header{
   position:relative;
   overflow:hidden;
@@ -14,7 +14,7 @@
   inset:-1.5%;
   z-index:0;
   pointer-events:none;
-  background:url('assets/infochain-hero.webp?v=20260816-3') 70% center/cover no-repeat;
+  background:url('assets/infochain-hero-1536.avif?v=20260816-4') 70% center/cover no-repeat;
   transform:scale(1.01);
   transform-origin:center;
   animation:skyline-drift 18s ease-in-out infinite alternate;
