@@ -1,10 +1,13 @@
-/* Shared layout for every InfoChain inner page. Keeps About, Services, Packages, FAQ and Contact visually connected to the landing page. */
+/* Shared layout for every InfoChain inner page. */
 :root{--mint:#8df5cf;--ink:#07100f;--muted:#aeb8b5;--line:rgba(255,255,255,.14)}
 body{background:#07100f;color:#f7f7f2}
-.site-header.simple-header{min-height:auto!important;background:linear-gradient(90deg,rgba(4,12,11,.9),rgba(4,12,11,.45) 55%,rgba(4,12,11,.72)),linear-gradient(180deg,rgba(4,10,9,.15),rgba(4,10,9,.78)),url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2400&q=88') center/cover no-repeat!important}
-.simple-header .hero{min-height:clamp(470px,62vh,700px)!important;padding:95px 0 90px!important;align-items:flex-end!important}
-.simple-header .hero-text{max-width:920px!important;padding-top:0!important}
-.simple-header .hero h1{max-width:920px!important;font-size:clamp(3.2rem,6.8vw,7rem)!important}
+.site-header.simple-header{min-height:auto!important;background:linear-gradient(90deg,rgba(4,12,11,.92) 0%,rgba(4,12,11,.68) 38%,rgba(4,12,11,.28) 72%,rgba(4,12,11,.54) 100%),linear-gradient(180deg,rgba(4,10,9,.08),rgba(4,10,9,.82)),url('assets/infochain-hero-bg.jpg') 68% center/cover no-repeat!important;position:relative;overflow:hidden;isolation:isolate}
+.site-header.simple-header:before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 70% 34%,rgba(141,245,207,.08),transparent 30%),linear-gradient(180deg,rgba(7,16,15,.06),rgba(7,16,15,.35));pointer-events:none}
+.site-header.simple-header:after{z-index:1!important;background:linear-gradient(90deg,rgba(4,12,11,.22),transparent 60%),linear-gradient(180deg,transparent 0%,rgba(4,10,9,.72) 100%)!important}
+.simple-header .nav,.simple-header .hero{z-index:2;position:relative}
+.simple-header .hero{min-height:clamp(620px,78vh,860px)!important;padding:120px 0 90px!important;align-items:flex-end!important}
+.simple-header .hero-text{max-width:930px!important;padding-top:0!important}
+.simple-header .hero h1{max-width:920px!important;font-size:clamp(3.2rem,6.8vw,7rem)!important;line-height:.9!important;letter-spacing:-.075em!important;text-shadow:0 0 22px rgba(141,245,207,.08)}
 .simple-header .hero-subtitle{max-width:720px!important}
 .page-content{max-width:1240px;margin:0 auto}
 .page-lead{display:grid;grid-template-columns:1fr .72fr;gap:80px;align-items:end;margin-bottom:52px}
@@ -28,4 +31,4 @@ body{background:#07100f;color:#f7f7f2}
 .content-section>p{color:var(--muted);max-width:760px}
 .page-cta{margin-top:35px;padding-top:55px;border-top:1px solid var(--line)}
 .page-cta h2{max-width:900px}
-@media(max-width:850px){.simple-header .hero{min-height:520px!important;padding:70px 0 65px!important}.page-lead,.split-section{grid-template-columns:1fr;gap:28px}.grid.three,.faq-list{grid-template-columns:1fr}.info-card,.faq-list .info-card{min-height:0}.simple-header .hero h1{font-size:clamp(2.8rem,12vw,5rem)!important}}
+@media(max-width:850px){.site-header.simple-header{background-position:62% center!important}.simple-header .hero{min-height:620px!important;padding:90px 0 65px!important}.page-lead,.split-section{grid-template-columns:1fr;gap:28px}.grid.three,.faq-list{grid-template-columns:1fr}.info-card,.faq-list .info-card{min-height:0}.simple-header .hero h1{font-size:clamp(2.8rem,12vw,5rem)!important}}
